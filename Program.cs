@@ -21,8 +21,7 @@ class Program
                 {
                     Console.WriteLine($"✅ Client connected: {socket.ConnectionInfo.ClientIpAddress}");
                     allClients.Add(socket);
-                    // Send initial message as text
-                    //socket.Send("{ \"caller\": \"User123\" }");
+                   
                 }
                 catch (Exception ex)
                 {
@@ -46,7 +45,7 @@ class Program
 
             // New handler for binary data
             List<byte> audioBuffer = new List<byte>();
-            int targetSizeBytes = 35 * 1024; // 5MB chunks
+            int targetSizeBytes = 35 * 1024; // 1 second file
             int sampleRate = 16000;
             int bitsPerSample = 16;
             int channels = 1;
